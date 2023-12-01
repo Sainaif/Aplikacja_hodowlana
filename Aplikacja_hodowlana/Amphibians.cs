@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Aplikacja_hodowlana
 {
-    internal class Amphibians
+    public class Amphibians
     {
+        // Amphibian-specific properties and methods
+        public string Morph { get; set; }
+        public string Lenght { get; set; }
+        public string Weight { get; set; }
+        public string Suplements { get; set; }  
+        // Create usage
     }
 }

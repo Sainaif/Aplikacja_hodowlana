@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Aplikacja_hodowlana
 {
-    internal class Reptiles
+    public class Reptiles : Animals
     {
+        // Reptile-specific properties and methods
+        public string Morph { get; set; }
+        public string Lenght { get; set; }
+        public string Weight { get; set; }
+        public DateTime DateOfLastShedding { get; set; }
+
+        // Create usage
+
     }
+
 }
