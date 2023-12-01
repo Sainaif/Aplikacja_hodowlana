@@ -12,7 +12,8 @@ namespace Aplikacja_hodowlana
         public string Morph { get; set; }
         public string Lenght { get; set; }
         public string Weight { get; set; }
-        public string Suplements { get; set; }  
+        public bool Supplements { get; set; }
+        public string SupplementDetails { get; set; }        
         // Create usage
     }
 }
