@@ -43,7 +43,7 @@ namespace Aplikacja_hodowlana
         public void RemoveArthropod(Arthropods arthropod) => Arthropods.Remove(arthropod);
         public void RemoveFood(Food food) => Food.Remove(food);
 
-        // Edit Methods (assuming each entity has a unique identifier like Id)
+        // Edit Methods 
         public void EditAnimal(Animals updatedAnimals)
         {
             var animals = Animals.FirstOrDefault(a => a.Id == updatedAnimals.Id);
@@ -180,8 +180,6 @@ namespace Aplikacja_hodowlana
             }
         }
 
-
-        // Similar edit methods for Reptiles, Amphibians, Arthropods, and Food
 
         // Save and Load Methods
         public void SaveToJsonFile(string filePath = null)
