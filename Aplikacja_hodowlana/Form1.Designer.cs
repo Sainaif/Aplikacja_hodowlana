@@ -2,21 +2,6 @@
 {
     partial class Form1
     {
-        private System.Windows.Forms.TextBox textBoxAnimalName;
-        private System.Windows.Forms.ComboBox comboBoxAnimalType;
-        private System.Windows.Forms.Button buttonAddAnimal;
-
-        // ... Other designer code
-
-        private void InitializeComponent()
-        {
-            // Initialize textBoxAnimalName
-            // Initialize comboBoxAnimalType
-            // Initialize buttonAddAnimal
-
-            this.buttonAddAnimal.Click += new System.EventHandler(this.buttonAddAnimal_Click);
-        }
-        //Everything below this line was generated automatically by Visual Studio
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -43,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // Form1
-            // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1096, 721);
-            Name = "Form1";
-            Text = "Form1";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form1";
         }
 
         #endregion
