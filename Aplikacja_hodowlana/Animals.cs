@@ -39,9 +39,6 @@ namespace Aplikacja_hodowlana
             // List of possible activity times, add more when needed
             day,
             night,
-            dusk,
-
-
         }
     }
 }
