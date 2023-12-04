@@ -14,8 +14,8 @@ namespace Aplikacja_hodowlana
         public string Weight { get; set; }
         public DateTime DateOfLastShedding { get; set; }
 
-        // Create usage
+        // Create usage tak
 
     }
-
+    
 }
