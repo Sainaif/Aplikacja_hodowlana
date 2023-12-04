@@ -22,11 +22,6 @@ namespace Aplikacja_hodowlana
             Mouse,
             Crickets,
             Locust,
-            La_Cucharacha,
-            Rabbit,
-            Worm,
-            Reptiles,
-            Amphibians,
         }
         // Method to get size based on FoodType
         public string GetFoodSize(FoodTypeList foodType)
@@ -34,24 +29,14 @@ namespace Aplikacja_hodowlana
             switch (foodType)
             {
                 case FoodTypeList.Rat:
-                    return "Medium-Large";
+                    return "Large";
                 case FoodTypeList.Mouse:
-                    return "Small-Medium";
+                    return "Small";
                 case FoodTypeList.Crickets:
-                    return "Tiny-Medium";
+                    return "Tiny";
                 case FoodTypeList.Locust:
-                    return "Medium-Large";
-                case FoodTypeList.Rabbit:
-                    return "Large-Very Large";
-                case FoodTypeList.La_Cucharacha:
-                    return "Tiny-Large";
-                case FoodTypeList.Worm:
-;                    return "Small-Medium";
-                    case FoodTypeList.Reptiles:
-                    return "Small-Large";
-                case FoodTypeList.Amphibians:
-                    return "Small-Large";
-
+                    return "Medium";
+                // Add more cases as needed
                 default:
                     return "Unknown";
             }
