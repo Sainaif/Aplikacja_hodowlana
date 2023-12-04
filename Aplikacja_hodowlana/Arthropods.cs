@@ -12,5 +12,6 @@ namespace Aplikacja_hodowlana
         public double SizeDC { get; set; }
         public DateTime LastMolt { get; set; }
         // Create usage
+        //gitjestzjebany
     }
 }
