@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacja_hodowlana
 {
-    public class Amphibians
+    public class Amphibians : Animals
     {
         // Amphibian-specific properties and methods
         public string Morph { get; set; }

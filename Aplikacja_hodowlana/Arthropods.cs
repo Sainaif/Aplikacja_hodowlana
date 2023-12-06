@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Aplikacja_hodowlana
 {
-    public class Arthropods
+    public class Arthropods : Animals
     {
         // Arthropod-specific properties and methods
-        public string SizeDC { get; set; }
-        public string LastMolt { get; set; }
+        public double SizeDC { get; set; }
+        public DateTime LastMolt { get; set; }
         // Create usage
-        //gitjestzjebany
+        
+
     }
 }
