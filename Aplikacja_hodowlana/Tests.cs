@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Aplikacja_hodowlana.Tests
 {
-    public class DataBaseTests
+     public class DataBaseTests
     {
         private readonly DataBase _dataBase;
 
@@ -33,7 +33,41 @@ namespace Aplikacja_hodowlana.Tests
             Assert.DoesNotContain(animal, _dataBase.Animals);
         }
 
-        // Add similar tests for Reptiles, Amphibians, Arthropods, and Food
+        [Fact]
+        public void AddReptile_AddsReptileToList()
+        {
+            var reptile = new Reptiles();
+            _dataBase.AddReptile(reptile);
+
+            Assert.Contains(reptile, _dataBase.Reptiles);
+        }
+
+        [Fact]
+        public void AddAmphibian_AddsAmphibianToList()
+        {
+            var amphibian = new Amphibians();
+            _dataBase.AddAmphibian(amphibian);
+
+            Assert.Contains(amphibian, _dataBase.Amphibians);
+        }
+
+        [Fact]
+        public void AddArthropod_AddsArthropodToList()
+        {
+            var arthropod = new Arthropods();
+            _dataBase.AddArthropod(arthropod);
+
+            Assert.Contains(arthropod, _dataBase.Arthropods);
+        }
+
+        [Fact]
+        public void AddFood_AddsFoodToList()
+        {
+            var food = new Food();
+            _dataBase.AddFood(food);
+
+            Assert.Contains(food, _dataBase.Food);
+        }
 
         [Fact]
         public void SaveToJsonFile_SavesToFile()
@@ -42,6 +76,7 @@ namespace Aplikacja_hodowlana.Tests
             _dataBase.SaveToJsonFile(filePath);
 
             Assert.True(File.Exists(filePath));
+            File.Delete(filePath); // Clean up after test
         }
 
         [Fact]
@@ -53,6 +88,7 @@ namespace Aplikacja_hodowlana.Tests
             var loadedDataBase = DataBase.LoadFromJsonFile(filePath);
 
             Assert.NotNull(loadedDataBase);
+            File.Delete(filePath); // Clean up after test
         }
     }
 }
