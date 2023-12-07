@@ -10,8 +10,8 @@ namespace Aplikacja_hodowlana
     {
         // Reptile-specific properties and methods
         public string Morph { get; set; }
-        public string Lenght { get; set; }
-        public string Weight { get; set; }
+        public double Lenght { get; set; }
+        public double Weight { get; set; }
         public DateTime DateOfLastShedding { get; set; }
 
         // Create usage

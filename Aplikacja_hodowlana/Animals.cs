@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Aplikacja_hodowlana
@@ -30,6 +31,7 @@ namespace Aplikacja_hodowlana
                 return age;
             }
         }
+        public List<Group> Groups { get; set; }
         public enum ClimateList
         {
             // List of possible climates, add more when needed

@@ -46,137 +46,142 @@ namespace Aplikacja_hodowlana
         // Edit Methods 
         public void EditAnimal(Animals updatedAnimals)
         {
-            var animals = Animals.FirstOrDefault(a => a.Id == updatedAnimals.Id);
-            if (animals != null)
+            var animalById = Animals.FirstOrDefault(a => a.Id == updatedAnimals.Id);
+            if (animalById != null)
             {
-                Animals[Animals.IndexOf(animals)] = updatedAnimals;
+                animalById = updatedAnimals;
             }
-            var animals2 = Animals.FirstOrDefault(a => a.Name == updatedAnimals.Name);
-            if (animals2 != null)
+            var animalByName = Animals.FirstOrDefault(a => a.Name == updatedAnimals.Name);
+            if (animalByName != null)
             {
-                Animals[Animals.IndexOf(animals2)] = updatedAnimals;
+                animalByName = updatedAnimals;
             }
-            var animals3 = Animals.FirstOrDefault(a => a.Group == updatedAnimals.Group);
-            if (animals3 != null)
+            var animalByGroup = Animals.FirstOrDefault(a => a.Group == updatedAnimals.Group);
+            if (animalByGroup != null)
             {
-                Animals[Animals.IndexOf(animals3)] = updatedAnimals;
+                animalByGroup = updatedAnimals;
             }
-            var animals4 = Animals.FirstOrDefault(a => a.Species == updatedAnimals.Species);
-            if (animals4 != null)
+            var animalBySpecies = Animals.FirstOrDefault(a => a.Species == updatedAnimals.Species);
+            if (animalBySpecies != null)
             {
-                Animals[Animals.IndexOf(animals4)] = updatedAnimals;
+                animalBySpecies = updatedAnimals;
             }
-            var animals5 = Animals.FirstOrDefault(a => a.Environment == updatedAnimals.Environment);
-            if (animals5 != null)
+            var animalByEnvironment = Animals.FirstOrDefault(a => a.Environment == updatedAnimals.Environment);
+            if (animalByEnvironment != null)
             {
-                Animals[Animals.IndexOf(animals5)] = updatedAnimals;
+                animalByEnvironment = updatedAnimals;
             }
-            var animals6 = Animals.FirstOrDefault(a => a.ActivityTime == updatedAnimals.ActivityTime);
-            if (animals6 != null)
+            var animalByActivityTime = Animals.FirstOrDefault(a => a.ActivityTime == updatedAnimals.ActivityTime);
+            if (animalByActivityTime != null)
             {
-                Animals[Animals.IndexOf(animals6)] = updatedAnimals;
+                animalByActivityTime = updatedAnimals;
             }
-            var animals7 = Animals.FirstOrDefault(a => a.DateOfLastFeeding == updatedAnimals.DateOfLastFeeding);
-            if (animals7 != null)
+            var animalByDateOfLastFeeding = Animals.FirstOrDefault(a => a.DateOfLastFeeding == updatedAnimals.DateOfLastFeeding);
+            if (animalByDateOfLastFeeding != null)
             {
-                Animals[Animals.IndexOf(animals7)] = updatedAnimals;
+                animalByDateOfLastFeeding = updatedAnimals;
             }
-            var animals8 = Animals.FirstOrDefault(a => a.DateOfBirth == updatedAnimals.DateOfBirth);
-            if (animals8 != null)
+            var animalByDateOfBirth = Animals.FirstOrDefault(a => a.DateOfBirth == updatedAnimals.DateOfBirth);
+            if (animalByDateOfBirth != null)
             {
-                Animals[Animals.IndexOf(animals8)] = updatedAnimals;
+                animalByDateOfBirth = updatedAnimals;
+            }
+            var animalByHumidity = Animals.FirstOrDefault(a => a.Humidity == updatedAnimals.Humidity);
+            if (animalByHumidity != null)
+            {
+                animalByHumidity = updatedAnimals;
             }
         }
         public void EditReptile(Reptiles updatedReptile)
         {
-            var reptile = Reptiles.FirstOrDefault(r => r.Morph == updatedReptile.Morph);
-            if (reptile != null)
+            var reptileByMorph = Reptiles.FirstOrDefault(r => r.Morph == updatedReptile.Morph);
+            if (reptileByMorph != null)
             {
-                Reptiles[Reptiles.IndexOf(reptile)] = updatedReptile;
+                reptileByMorph = updatedReptile;
             }
-            var reptile1 = Reptiles.FirstOrDefault(r => r.Lenght == updatedReptile.Lenght);
-            if (reptile1 != null)
+            var reptileByLength = Reptiles.FirstOrDefault(r => r.Lenght == updatedReptile.Lenght);
+            if (reptileByLength != null)
             {
-                Reptiles[Reptiles.IndexOf(reptile1)] = updatedReptile;
+                reptileByLength = updatedReptile;
             }
-            var reptile2 = Reptiles.FirstOrDefault(r => r.Weight == updatedReptile.Weight);
-            if (reptile2 != null)
+            var reptileByWeight = Reptiles.FirstOrDefault(r => r.Weight == updatedReptile.Weight);
+            if (reptileByWeight != null)
             {
-                Reptiles[Reptiles.IndexOf(reptile2)] = updatedReptile;
+                reptileByWeight = updatedReptile;
             }
         }
         public void EditAmphibian(Amphibians updatedAmphibian)
         {
-            var amphibian = Amphibians.FirstOrDefault(a => a.Morph == updatedAmphibian.Morph);
-            if (amphibian != null)
+            var amphibianByMorph = Amphibians.FirstOrDefault(a => a.Morph == updatedAmphibian.Morph);
+            if (amphibianByMorph != null)
             {
-                Amphibians[Amphibians.IndexOf(amphibian)] = updatedAmphibian;
+                amphibianByMorph = updatedAmphibian;
             }
-            var amphibian1 = Amphibians.FirstOrDefault(a => a.Lenght == updatedAmphibian.Lenght);
-            if (amphibian1 != null)
+            var amphibianByLength = Amphibians.FirstOrDefault(a => a.Lenght == updatedAmphibian.Lenght);
+            if (amphibianByLength != null)
             {
-                Amphibians[Amphibians.IndexOf(amphibian1)] = updatedAmphibian;
+                amphibianByLength = updatedAmphibian;
             }
-            var amphibian2 = Amphibians.FirstOrDefault(a => a.Weight == updatedAmphibian.Weight);
-            if (amphibian2 != null)
+            var amphibianByWeight = Amphibians.FirstOrDefault(a => a.Weight == updatedAmphibian.Weight);
+            if (amphibianByWeight != null)
             {
-                Amphibians[Amphibians.IndexOf(amphibian2)] = updatedAmphibian;
+                amphibianByWeight = updatedAmphibian;
             }
-            var amphibian3 = Amphibians.FirstOrDefault(a => a.Supplements == updatedAmphibian.Supplements);
-            if (amphibian3 != null)
+            var amphibianBySupplements = Amphibians.FirstOrDefault(a => a.Supplements == updatedAmphibian.Supplements);
+            if (amphibianBySupplements != null)
             {
-                Amphibians[Amphibians.IndexOf(amphibian3)] = updatedAmphibian;
+                amphibianBySupplements = updatedAmphibian;
             }
-            var amphibian4 = Amphibians.FirstOrDefault(a => a.SupplementDetails == updatedAmphibian.SupplementDetails);
-            if (amphibian4 != null)
+            var amphibianBySupplementDetails = Amphibians.FirstOrDefault(a => a.SupplementDetails == updatedAmphibian.SupplementDetails);
+            if (amphibianBySupplementDetails != null)
             {
-                Amphibians[Amphibians.IndexOf(amphibian4)] = updatedAmphibian;
+                amphibianBySupplementDetails = updatedAmphibian;
             }
         }
         public void EditArthropod(Arthropods updatedArthropod)
         {
-            var arthropod = Arthropods.FirstOrDefault(a => a.SizeDC == updatedArthropod.SizeDC);
-            if (arthropod != null)
+            var arthropodBySizeDC = Arthropods.FirstOrDefault(a => a.SizeDC == updatedArthropod.SizeDC);
+            if (arthropodBySizeDC != null)
             {
-                Arthropods[Arthropods.IndexOf(arthropod)] = updatedArthropod;
+                arthropodBySizeDC = updatedArthropod;
             }
-            var arthropod1 = Arthropods.FirstOrDefault(a => a.LastMolt == updatedArthropod.LastMolt);
-            if (arthropod1 != null)
+            var arthropodByLastMolt = Arthropods.FirstOrDefault(a => a.LastMolt == updatedArthropod.LastMolt);
+            if (arthropodByLastMolt != null)
             {
-                Arthropods[Arthropods.IndexOf(arthropod1)] = updatedArthropod;
+                arthropodByLastMolt = updatedArthropod;
             }
         }
         public void EditFood(Food updatedFood)
         {
-            var food = Food.FirstOrDefault(f => f.Id == updatedFood.Id);
-            if (food != null)
+            var foodById = Food.FirstOrDefault(f => f.Id == updatedFood.Id);
+            if (foodById != null)
             {
-                Food[Food.IndexOf(food)] = updatedFood;
+                foodById = updatedFood;
             }
-            var food1 = Food.FirstOrDefault(f => f.Name == updatedFood.Name);
-            if (food1 != null)
+            var foodByName = Food.FirstOrDefault(f => f.Name == updatedFood.Name);
+            if (foodByName != null)
             {
-                Food[Food.IndexOf(food1)] = updatedFood;
+                foodByName = updatedFood;
             }
-            var food2 = Food.FirstOrDefault(f => f.Stock == updatedFood.Stock);
-            if (food2 != null)
+            var foodByStock = Food.FirstOrDefault(f => f.Stock == updatedFood.Stock);
+            if (foodByStock != null)
             {
-                Food[Food.IndexOf(food2)] = updatedFood;
+                foodByStock = updatedFood;
             }
-            var food3 = Food.FirstOrDefault(f => f.Size == updatedFood.Size);
-            if (food3 != null)
+            var foodBySize = Food.FirstOrDefault(f => f.Size == updatedFood.Size);
+            if (foodBySize != null)
             {
-                Food[Food.IndexOf(food3)] = updatedFood;
+                foodBySize = updatedFood;
             }
-            var food4 = Food.FirstOrDefault(f => f.FoodType == updatedFood.FoodType);
-            if (food4 != null)
+            var foodByFoodType = Food.FirstOrDefault(f => f.FoodType == updatedFood.FoodType);
+            if (foodByFoodType != null)
             {
-                Food[Food.IndexOf(food4)] = updatedFood;
+                foodByFoodType = updatedFood;
             }
-            var food5 = Food.FirstOrDefault(f => f.FeedingInterval == updatedFood.FeedingInterval);
-            if (food5 != null)
+            var foodByFeedingInterval = Food.FirstOrDefault(f => f.FeedingInterval == updatedFood.FeedingInterval);
+            if (foodByFeedingInterval != null)
             {
-                Food[Food.IndexOf(food5)] = updatedFood;
+                foodByFeedingInterval = updatedFood;
             }
         }
 
