@@ -6,6 +6,20 @@ namespace Aplikacja_hodowlana
         {
             InitializeComponent();
         }
+        private void exit_Click(object sender, EventArgs e) //Exit button
+        {
+            Application.Exit();
+        }
+
+        private void my_animals_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_animal_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
@@ -17,29 +31,12 @@ namespace Aplikacja_hodowlana
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
 
-        }
+       
     }
 }
