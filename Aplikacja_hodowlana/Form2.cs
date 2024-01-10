@@ -16,8 +16,8 @@ namespace Aplikacja_hodowlana
         public Form2()
         {
             InitializeComponent();
-            
-           
+
+
 
         }
 
@@ -26,17 +26,44 @@ namespace Aplikacja_hodowlana
             Animals newAnimal = new Animals()
             {
                 Id = 1,
+
                 ActivityTime = 0,
                 Age = 1,
                 Group = "Gady",
                 Name = "Lusia",
-                 Species = "Wąż",
-            };   
-            string details = $"Name: { newAnimal.Name} \n Group: { newAnimal.Group} \n Species: { newAnimal.Species} \n Activity time: { newAnimal.ActivityTime} \n Age: { newAnimal.Age} \n Id: { newAnimal.Id}";
-            textBox1.Text = details;
+                Species = "Wąż",
+            };
+            string details = $"Name: {newAnimal.Name} \n Group: {newAnimal.Group} \n Species: {newAnimal.Species} \n Activity time: {newAnimal.ActivityTime} \n Age: {newAnimal.Age} \n Id: {newAnimal.Id}";
+         //   textBox1.Text = details;
 
 
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ReturnToMenu(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
         }
     }
 }

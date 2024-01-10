@@ -23,6 +23,7 @@ namespace Aplikacja_hodowlana
         private void add_animal_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
+            this.Hide();
             form2.Show();
            
         }
@@ -33,7 +34,7 @@ namespace Aplikacja_hodowlana
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {               
            
         }
 
