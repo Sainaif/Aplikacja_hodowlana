@@ -30,6 +30,10 @@ namespace Aplikacja_hodowlana
                 if (DateOfBirth.Date > today.AddYears(-age)) age--;
                 return age;
             }
+            set
+            {
+
+            }
         }
         public List<Group> Groups { get; set; }
         public enum ClimateList
