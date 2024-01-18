@@ -10,14 +10,14 @@ namespace Aplikacja_hodowlana
 {
     public class DataBase
     {
-        // Database class, contains lists of all animals, reptiles, amphibians, arthropods and food
+        
         public List<Animals> Animals { get; set; }
         public List<Reptiles> Reptiles { get; set; }
         public List<Amphibians> Amphibians { get; set; }
         public List<Arthropods> Arthropods { get; set; }
         public List<Food> Food { get; set; }
 
-        // Default file path
+        
         private static string defaultFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
 
         public DataBase()
@@ -29,21 +29,21 @@ namespace Aplikacja_hodowlana
             Food = new List<Food>();
         }
 
-        // Add Methods
+        
         public void AddAnimal(Animals animal) => Animals.Add(animal);
         public void AddReptile(Reptiles reptile) => Reptiles.Add(reptile);
         public void AddAmphibian(Amphibians amphibian) => Amphibians.Add(amphibian);
         public void AddArthropod(Arthropods arthropod) => Arthropods.Add(arthropod);
         public void AddFood(Food food) => Food.Add(food);
 
-        // Remove Methods
+        
         public void RemoveAnimal(Animals animal) => Animals.Remove(animal);
         public void RemoveReptile(Reptiles reptile) => Reptiles.Remove(reptile);
         public void RemoveAmphibian(Amphibians amphibian) => Amphibians.Remove(amphibian);
         public void RemoveArthropod(Arthropods arthropod) => Arthropods.Remove(arthropod);
         public void RemoveFood(Food food) => Food.Remove(food);
 
-        // Edit Methods 
+       
         public void EditAnimal(Animals updatedAnimals)
         {
             var animalById = Animals.FirstOrDefault(a => a.Id == updatedAnimals.Id);
@@ -76,16 +76,16 @@ namespace Aplikacja_hodowlana
             {
                 animalByActivityTime = updatedAnimals;
             }
-            var animalByDateOfLastFeeding = Animals.FirstOrDefault(a => a.DateOfLastFeeding == updatedAnimals.DateOfLastFeeding);
-            if (animalByDateOfLastFeeding != null)
-            {
-                animalByDateOfLastFeeding = updatedAnimals;
-            }
-            var animalByDateOfBirth = Animals.FirstOrDefault(a => a.DateOfBirth == updatedAnimals.DateOfBirth);
-            if (animalByDateOfBirth != null)
-            {
-                animalByDateOfBirth = updatedAnimals;
-            }
+            //var animalByDateOfLastFeeding = Animals.FirstOrDefault(a => a.DateOfLastFeeding == updatedAnimals.DateOfLastFeeding);
+            //if (animalByDateOfLastFeeding != null)
+            //{
+            //    animalByDateOfLastFeeding = updatedAnimals;
+            //}
+            //var animalByDateOfBirth = Animals.FirstOrDefault(a => a.DateOfBirth == updatedAnimals.DateOfBirth);
+            //if (animalByDateOfBirth != null)
+            //{
+            //    animalByDateOfBirth = updatedAnimals;
+            //}
             var animalByHumidity = Animals.FirstOrDefault(a => a.Humidity == updatedAnimals.Humidity);
             if (animalByHumidity != null)
             {
@@ -186,7 +186,7 @@ namespace Aplikacja_hodowlana
         }
 
 
-        // Save and Load Methods
+        
         public void SaveToJsonFile(string filePath = null)
         {
             if (string.IsNullOrEmpty(filePath))
@@ -194,6 +194,7 @@ namespace Aplikacja_hodowlana
                 filePath = defaultFilePath;
             }
             string json = JsonConvert.SerializeObject(this, Formatting.Indented);
+           
             File.WriteAllText(filePath, json);
         }
 

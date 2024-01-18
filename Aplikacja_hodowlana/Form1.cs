@@ -17,12 +17,15 @@ namespace Aplikacja_hodowlana
 
         private void my_animals_Click(object sender, EventArgs e)
         {
-
+            Form3 form3 = new Form3();
+            this.Hide();
+            form3.Show();
         }
 
         private void add_animal_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
+           
             this.Hide();
             form2.Show();
            
