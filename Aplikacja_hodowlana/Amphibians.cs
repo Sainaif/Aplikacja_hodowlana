@@ -8,12 +8,12 @@ namespace Aplikacja_hodowlana
 {
     public class Amphibians : Animals
     {
-        // Amphibian-specific properties and methods
+       
         public string Morph { get; set; }
         public string Lenght { get; set; }
         public string Weight { get; set; }
         public bool Supplements { get; set; }
         public string SupplementDetails { get; set; }        
-        // Create usage
+        
     }
 }
