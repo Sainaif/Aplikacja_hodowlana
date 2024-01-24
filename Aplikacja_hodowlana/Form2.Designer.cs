@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             Type = new ComboBox();
             button2 = new Button();
@@ -46,8 +45,6 @@
             Add_animal = new Button();
             BodyLength = new ComboBox();
             textBox9 = new TextBox();
-            Age = new ComboBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             textBox10 = new TextBox();
             textBox11 = new TextBox();
             textBox12 = new TextBox();
@@ -58,11 +55,13 @@
             textBox17 = new TextBox();
             textBox18 = new TextBox();
             textBox19 = new TextBox();
-            suborder = new ComboBox();
+            suborder3 = new ComboBox();
             Humidity = new ComboBox();
             textBox15 = new TextBox();
             Food_weight = new ComboBox();
             Weight = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            suborder = new ComboBox();
             SuspendLayout();
             // 
             // Type
@@ -208,7 +207,7 @@
             // Add_animal
             // 
             Add_animal.AutoSize = true;
-            Add_animal.Location = new Point(923, 38);
+            Add_animal.Location = new Point(923, 100);
             Add_animal.Name = "Add_animal";
             Add_animal.Size = new Size(169, 80);
             Add_animal.TabIndex = 17;
@@ -236,20 +235,6 @@
             textBox9.Text = "Data Urodzenia";
             textBox9.TextAlign = HorizontalAlignment.Center;
             textBox9.TextChanged += textBox9_TextChanged;
-            // 
-            // Age
-            // 
-            Age.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            Age.FormattingEnabled = true;
-            Age.Location = new Point(802, 73);
-            Age.Name = "Age";
-            Age.Size = new Size(115, 24);
-            Age.TabIndex = 21;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // textBox10
             // 
@@ -310,7 +295,7 @@
             // 
             Suplements.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
             Suplements.FormattingEnabled = true;
-            Suplements.Location = new Point(68, 201);
+            Suplements.Location = new Point(65, 205);
             Suplements.Name = "Suplements";
             Suplements.Size = new Size(121, 24);
             Suplements.TabIndex = 30;
@@ -353,14 +338,14 @@
             textBox19.Text = "Podrząd";
             textBox19.TextAlign = HorizontalAlignment.Center;
             // 
-            // suborder
+            // suborder3
             // 
-            suborder.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            suborder.FormattingEnabled = true;
-            suborder.Location = new Point(690, 71);
-            suborder.Name = "suborder";
-            suborder.Size = new Size(106, 24);
-            suborder.TabIndex = 36;
+            suborder3.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            suborder3.FormattingEnabled = true;
+            suborder3.Location = new Point(811, 215);
+            suborder3.Name = "suborder3";
+            suborder3.Size = new Size(106, 24);
+            suborder3.TabIndex = 36;
             // 
             // Humidity
             // 
@@ -399,6 +384,22 @@
             Weight.Size = new Size(139, 27);
             Weight.TabIndex = 40;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(802, 71);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(219, 23);
+            dateTimePicker1.TabIndex = 41;
+            // 
+            // suborder
+            // 
+            suborder.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            suborder.FormattingEnabled = true;
+            suborder.Location = new Point(690, 73);
+            suborder.Name = "suborder";
+            suborder.Size = new Size(106, 24);
+            suborder.TabIndex = 42;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -406,11 +407,13 @@
             BackColor = Color.DarkSeaGreen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1104, 666);
+            Controls.Add(suborder);
+            Controls.Add(dateTimePicker1);
             Controls.Add(Weight);
             Controls.Add(Food_weight);
             Controls.Add(textBox15);
             Controls.Add(Humidity);
-            Controls.Add(suborder);
+            Controls.Add(suborder3);
             Controls.Add(textBox19);
             Controls.Add(textBox18);
             Controls.Add(textBox17);
@@ -421,7 +424,6 @@
             Controls.Add(textBox12);
             Controls.Add(textBox11);
             Controls.Add(textBox10);
-            Controls.Add(Age);
             Controls.Add(textBox9);
             Controls.Add(BodyLength);
             Controls.Add(Add_animal);
@@ -464,7 +466,6 @@
         private Button Add_animal;
         private ComboBox BodyLength;
         private TextBox textBox9;
-        private ComboBox Age;
         private ContextMenuStrip contextMenuStrip1;
         private TextBox textBox10;
         private TextBox textBox11;
@@ -476,10 +477,12 @@
         private TextBox textBox17;
         private TextBox textBox18;
         private TextBox textBox19;
-        private ComboBox suborder;
+        private ComboBox suborder3;
         private ComboBox Humidity;
         private TextBox textBox15;
         private ComboBox Food_weight;
         private TextBox Weight;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox suborder;
     }
 }

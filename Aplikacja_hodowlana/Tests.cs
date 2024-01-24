@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Aplikacja_hodowlana.Tests
 {
-     public class DataBaseTests
+    public class DataBaseTests
     {
         private readonly DataBase _dataBase;
 

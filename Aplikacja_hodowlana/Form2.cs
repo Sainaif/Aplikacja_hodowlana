@@ -18,7 +18,14 @@ namespace Aplikacja_hodowlana
 
         public Form2()
         {
+            
             InitializeComponent();
+            suborder.Items.Clear();
+            Weight.Enabled = false;
+            Length.Enabled = false;
+            BodyLength.Enabled = false;
+            Food_weight.Enabled = false;
+            Suplements.Enabled = false;
             Type.Items.Clear();
             Type.Items.AddRange(new string[] { "Gady", "Pajęczaki", "Płazy", "Owady", "Inne" });
 
@@ -32,18 +39,15 @@ namespace Aplikacja_hodowlana
             Climate.Items.Clear();
             Climate.Items.AddRange(new string[] { "Zimny(<20°C)", "Umiarkowany(20-25)°C", "Ciepły(25-35°C)", "Gorący(35+°C)" });
 
-            suborder.Items.Clear();
-            suborder.Items.AddRange(new string[] { "Węże", "Jaszczurki", "Owady", "Pająki" ,"Skorpiony", "Żaby" });
-
+            
+          //  suborder.Items.AddRange(new string[] { "Węże", "Jaszczurki", "Owady", "Pająki" ,"Skorpiony", "Żaby" });
+           
             Humidity.Items.Clear();
             Humidity.Items.AddRange(new string[] { "Niska(<40%)", "Średnia(40-60%)", "Wysoka(60-80%)", "Bardzo wysoka(80+%)", "Zmienna" });
 
             BodyLength.Items.Clear();
             BodyLength.Items.AddRange(new string[] { "0.5DC", "1", "1.5", "2","2.5","3","3.5","4","4.5","5","5.5", "6","6.5","7","7.5","8","8.5","9","9.5","10"  });
-            Weight.Enabled = false;
-            Length.Enabled = false;
-            BodyLength.Enabled = false; 
-
+         
             Suplements.Items.Clear();
             Suplements.Items.AddRange(new string[] { "Tak", "Nie" });
 
@@ -54,30 +58,32 @@ namespace Aplikacja_hodowlana
         private void Type_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            if (Type.SelectedItem.ToString() == "Gady")
+            if (Type.SelectedItem != null && Type.SelectedItem.ToString() == "Gady")
             {
-                suborder.Items.Clear();
-                suborder.Items.AddRange(new string[] { "Węże", "Jaszczurki" });
-                suborder.Enabled = true;
+                suborder3.Items.Clear();
+                suborder3.Items.AddRange(new string[] { "Węże", "Jaszczurki" });
+                suborder3.Enabled = true;
                 Weight.Enabled = true;
                 Length.Enabled = true;
                 BodyLength.Enabled = false;
-                Suplements.Enabled = true;
-                if (suborder.SelectedItem.ToString() == "Węże")
+                
+                if (suborder3.SelectedItem != null && suborder3.SelectedItem.ToString() == "Węże")
                 {
                     Food_weight.Enabled = true;
+                    Suplements.Enabled = false;
                 }
                 else
                 {
                     Food_weight.Enabled = false;
+                    Suplements.Enabled = true;
                 }
-
+                
             }
             else if (Type.SelectedItem.ToString() == "Płazy")
             {
-                suborder.Items.Clear();
-                suborder.Items.AddRange(new string[] { "Żaby" });
-                suborder.Enabled = true;
+                suborder3.Items.Clear();
+                suborder3.Items.AddRange(new string[] { "Żaby" });
+                suborder3.Enabled = true;
                 Weight.Enabled = true;
                 Length.Enabled = false;
                 BodyLength.Enabled = true;
@@ -86,9 +92,9 @@ namespace Aplikacja_hodowlana
             }
             else if (Type.SelectedItem.ToString() == "Pajęczaki")
             {
-                suborder.Items.Clear();
-                suborder.Items.AddRange(new string[] { "Pająki", "Skorpiony" });
-                suborder.Enabled = true;
+                suborder3.Items.Clear();
+                suborder3.Items.AddRange(new string[] { "Pająki", "Skorpiony" });
+                suborder3.Enabled = true;
                 Weight.Enabled = false;
                 Length.Enabled = false;
                 BodyLength.Enabled = true;
@@ -97,9 +103,9 @@ namespace Aplikacja_hodowlana
             }
             else if (Type.SelectedItem.ToString() == "Owady")
             {
-                suborder.Items.Clear();
-                suborder.Items.AddRange(new string[] { "Modliszki", "Straszyki", "Patyczaki" });
-                suborder.Enabled = true;
+                suborder3.Items.Clear();
+                suborder3.Items.AddRange(new string[] { "Modliszki", "Straszyki", "Patyczaki" });
+                suborder3.Enabled = true;
                 Weight.Enabled = false;
                 Length.Enabled = false;
                 BodyLength.Enabled = true;
@@ -108,9 +114,9 @@ namespace Aplikacja_hodowlana
             }
             else if (Type.SelectedItem.ToString() == "Inne")
             {
-                suborder.Items.Clear();
-                suborder.Items.AddRange(new string[] { "Inne" });
-                suborder.Enabled = true;
+                suborder3.Items.Clear();
+                suborder3.Items.AddRange(new string[] { "Inne" });
+                suborder3.Enabled = true;
                 Weight.Enabled = false;
                 Length.Enabled = false;
                 BodyLength.Enabled = false;
@@ -124,27 +130,29 @@ namespace Aplikacja_hodowlana
         private void Add_animal_Click(object sender, EventArgs e)
         {
 
-           // DataBase dataBase = new DataBase();
+            //DataBase dataBase = new DataBase();
+            
 
             if (Type.SelectedItem.ToString() == "Gady")
             {
                 
                 var reptile = new Reptiles()
                 {
+                    
                     Group = Type.SelectedItem.ToString(),
                     Name = textBox1.Text,
                     Species = textBox2.Text,
                     Environment = Enviroment_forms.SelectedItem.ToString(),
                     ActivityTime = Activity.SelectedItem.ToString(),
-                    //   DateOfLastFeeding = dateTimePicker1.Value,
-                    //  DateOfBirth = dateTimePicker2.Value, 
+                    
+                    DateOfBirth = dateTimePicker1.Value, 
                     Morph = textBox18.Text,
                     Lenght = Convert.ToDouble(Length.Text),
                     Weight = Convert.ToDouble(Weight.Text),
-                  //  Supplements = Convert.(Suplements.SelectedItem.ToString()),
-                    // DateOfLastShedding = dateTimePicker3.Value,
+                    Suplements = Suplements.SelectedItem.ToString() == "Tak" ? true : false,
                     Humidity = Humidity.SelectedItem.ToString(),
                     Climate = Climate.SelectedItem.ToString(),
+                    Added = DateTime.Now,
 
                 };
                 

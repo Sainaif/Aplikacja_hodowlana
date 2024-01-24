@@ -14,18 +14,18 @@ namespace Aplikacja_hodowlana
 {
     public partial class Form3 : Form
     {
-       
+
         private static string jsonFilePath = @"C:\Users\kosso\OneDrive\Pulpit\Reptiles.json";
 
         public Form3()
         {
-            InitializeComponent(); 
+            InitializeComponent();
 
             try
             {
+
                 DataBase dataBase = LoadFromJsonFile(jsonFilePath);
-                string jsonContent = JsonConvert.SerializeObject(dataBase, Formatting.Indented);
-                richTextBox.Text = jsonContent;
+                DisplayData(dataBase);
             }
             catch (Exception ex)
             {
@@ -40,6 +40,7 @@ namespace Aplikacja_hodowlana
                 filePath = jsonFilePath;
             }
 
+
             if (!File.Exists(filePath))
             {
                 return new DataBase();
@@ -47,6 +48,38 @@ namespace Aplikacja_hodowlana
 
             string json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<DataBase>(json);
+        }
+        private void DisplayData(DataBase dataBase)
+        {
+            foreach (var item2 in dataBase.Amphibians)
+            {
+                dataGridView1.DataSource = dataBase.Amphibians;
+            }
+            foreach (var item3 in dataBase.Arthropods)
+            {
+                dataGridView1.DataSource = dataBase.Arthropods;
+            }
+            foreach (var item in dataBase.Reptiles)
+            {
+                dataGridView1.DataSource = dataBase.Reptiles;
+            }
+           
+        }
+
+
+
+        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
         }
     }
 
