@@ -51,19 +51,22 @@ namespace Aplikacja_hodowlana
         }
         private void DisplayData(DataBase dataBase)
         {
-            foreach (var item2 in dataBase.Amphibians)
-            {
-                dataGridView1.DataSource = dataBase.Amphibians;
-            }
-            foreach (var item3 in dataBase.Arthropods)
-            {
-                dataGridView1.DataSource = dataBase.Arthropods;
-            }
-            foreach (var item in dataBase.Reptiles)
-            {
+            //foreach (var item in dataBase.Reptiles)
+            
                 dataGridView1.DataSource = dataBase.Reptiles;
-            }
-           
+                //dataGridView1.DataSource = dataBase.Amphibians;
+                //dataGridView1.DataSource = dataBase.Arthropods;
+                dataGridView1.Columns["Name"].DisplayIndex = 0  ;
+            dataGridView1.DataBindingComplete += (s, e) =>
+            {
+                if (dataGridView1.Columns.Contains("Name"))
+                {
+                    dataGridView1.Columns["Name"].DisplayIndex = 0;
+                }
+            };
+
+
+
         }
 
 

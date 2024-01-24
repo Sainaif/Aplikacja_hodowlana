@@ -22,7 +22,7 @@ namespace Aplikacja_hodowlana
         public DateTime DateOfBirth { get; set; }
         public double MonthlyCost { get; set; }
         public DateTime Added { get; set; }
-        
+        public string Sex { get; set; }
         
         
         public int Age
