@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             Type = new ComboBox();
             button2 = new Button();
@@ -46,8 +45,6 @@
             Add_animal = new Button();
             BodyLength = new ComboBox();
             textBox9 = new TextBox();
-            Age = new ComboBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             textBox10 = new TextBox();
             textBox11 = new TextBox();
             textBox12 = new TextBox();
@@ -58,11 +55,14 @@
             textBox17 = new TextBox();
             textBox18 = new TextBox();
             textBox19 = new TextBox();
-            suborder = new ComboBox();
             Humidity = new ComboBox();
-            textBox15 = new TextBox();
-            Food_weight = new ComboBox();
             Weight = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            suborder = new ComboBox();
+            textBox3 = new TextBox();
+            MonthlyCost = new TextBox();
+            sex = new ComboBox();
+            textBox4 = new TextBox();
             SuspendLayout();
             // 
             // Type
@@ -208,7 +208,7 @@
             // Add_animal
             // 
             Add_animal.AutoSize = true;
-            Add_animal.Location = new Point(923, 38);
+            Add_animal.Location = new Point(923, 12);
             Add_animal.Name = "Add_animal";
             Add_animal.Size = new Size(169, 80);
             Add_animal.TabIndex = 17;
@@ -228,7 +228,7 @@
             // textBox9
             // 
             textBox9.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            textBox9.Location = new Point(802, 38);
+            textBox9.Location = new Point(12, 304);
             textBox9.Name = "textBox9";
             textBox9.ReadOnly = true;
             textBox9.Size = new Size(115, 27);
@@ -236,20 +236,6 @@
             textBox9.Text = "Data Urodzenia";
             textBox9.TextAlign = HorizontalAlignment.Center;
             textBox9.TextChanged += textBox9_TextChanged;
-            // 
-            // Age
-            // 
-            Age.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            Age.FormattingEnabled = true;
-            Age.Location = new Point(802, 73);
-            Age.Name = "Age";
-            Age.Size = new Size(115, 24);
-            Age.TabIndex = 21;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // textBox10
             // 
@@ -298,21 +284,21 @@
             // textBox14
             // 
             textBox14.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            textBox14.Location = new Point(12, 172);
+            textBox14.Location = new Point(12, 241);
             textBox14.Name = "textBox14";
             textBox14.ReadOnly = true;
-            textBox14.Size = new Size(229, 27);
+            textBox14.Size = new Size(139, 27);
             textBox14.TabIndex = 29;
-            textBox14.Text = "Sugerowana suplementacja(Gady, Płazy)";
+            textBox14.Text = "Suplementacja";
             textBox14.TextAlign = HorizontalAlignment.Center;
             // 
             // Suplements
             // 
             Suplements.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
             Suplements.FormattingEnabled = true;
-            Suplements.Location = new Point(68, 201);
+            Suplements.Location = new Point(37, 274);
             Suplements.Name = "Suplements";
-            Suplements.Size = new Size(121, 24);
+            Suplements.Size = new Size(68, 24);
             Suplements.TabIndex = 30;
             // 
             // Length
@@ -326,10 +312,10 @@
             // textBox17
             // 
             textBox17.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            textBox17.Location = new Point(514, 110);
+            textBox17.Location = new Point(12, 175);
             textBox17.Name = "textBox17";
             textBox17.ReadOnly = true;
-            textBox17.Size = new Size(106, 27);
+            textBox17.Size = new Size(139, 27);
             textBox17.TabIndex = 33;
             textBox17.Text = "Odmiana";
             textBox17.TextAlign = HorizontalAlignment.Center;
@@ -337,7 +323,7 @@
             // textBox18
             // 
             textBox18.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            textBox18.Location = new Point(514, 143);
+            textBox18.Location = new Point(12, 208);
             textBox18.Name = "textBox18";
             textBox18.Size = new Size(222, 27);
             textBox18.TabIndex = 34;
@@ -353,15 +339,6 @@
             textBox19.Text = "Podrząd";
             textBox19.TextAlign = HorizontalAlignment.Center;
             // 
-            // suborder
-            // 
-            suborder.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            suborder.FormattingEnabled = true;
-            suborder.Location = new Point(690, 71);
-            suborder.Name = "suborder";
-            suborder.Size = new Size(106, 24);
-            suborder.TabIndex = 36;
-            // 
             // Humidity
             // 
             Humidity.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
@@ -371,26 +348,6 @@
             Humidity.Size = new Size(96, 24);
             Humidity.TabIndex = 37;
             // 
-            // textBox15
-            // 
-            textBox15.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            textBox15.Location = new Point(248, 172);
-            textBox15.Name = "textBox15";
-            textBox15.ReadOnly = true;
-            textBox15.Size = new Size(239, 27);
-            textBox15.TabIndex = 38;
-            textBox15.Text = "Sugerowana waga karmówki(węże)";
-            textBox15.TextAlign = HorizontalAlignment.Center;
-            // 
-            // Food_weight
-            // 
-            Food_weight.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
-            Food_weight.FormattingEnabled = true;
-            Food_weight.Location = new Point(317, 201);
-            Food_weight.Name = "Food_weight";
-            Food_weight.Size = new Size(121, 24);
-            Food_weight.TabIndex = 39;
-            // 
             // Weight
             // 
             Weight.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
@@ -399,6 +356,63 @@
             Weight.Size = new Size(139, 27);
             Weight.TabIndex = 40;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(12, 337);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(219, 23);
+            dateTimePicker1.TabIndex = 41;
+            // 
+            // suborder
+            // 
+            suborder.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            suborder.FormattingEnabled = true;
+            suborder.Location = new Point(690, 73);
+            suborder.Name = "suborder";
+            suborder.Size = new Size(106, 24);
+            suborder.TabIndex = 42;
+            // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            textBox3.Location = new Point(12, 366);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(191, 27);
+            textBox3.TabIndex = 43;
+            textBox3.Text = "Miesięczny koszt utrzymania\r\n";
+            textBox3.TextAlign = HorizontalAlignment.Center;
+            textBox3.TextChanged += textBox3_TextChanged_1;
+            // 
+            // MonthlyCost
+            // 
+            MonthlyCost.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            MonthlyCost.Location = new Point(12, 399);
+            MonthlyCost.Name = "MonthlyCost";
+            MonthlyCost.Size = new Size(115, 27);
+            MonthlyCost.TabIndex = 44;
+            // 
+            // sex
+            // 
+            sex.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            sex.FormattingEnabled = true;
+            sex.Location = new Point(37, 465);
+            sex.Name = "sex";
+            sex.Size = new Size(68, 24);
+            sex.TabIndex = 45;
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Yu Gothic Medium", 9F, FontStyle.Bold);
+            textBox4.Location = new Point(9, 432);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(118, 27);
+            textBox4.TabIndex = 46;
+            textBox4.Text = "Płec";
+            textBox4.TextAlign = HorizontalAlignment.Center;
+            textBox4.TextChanged += textBox4_TextChanged;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -406,11 +420,14 @@
             BackColor = Color.DarkSeaGreen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1104, 666);
-            Controls.Add(Weight);
-            Controls.Add(Food_weight);
-            Controls.Add(textBox15);
-            Controls.Add(Humidity);
+            Controls.Add(textBox4);
+            Controls.Add(sex);
+            Controls.Add(MonthlyCost);
+            Controls.Add(textBox3);
             Controls.Add(suborder);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(Weight);
+            Controls.Add(Humidity);
             Controls.Add(textBox19);
             Controls.Add(textBox18);
             Controls.Add(textBox17);
@@ -421,7 +438,6 @@
             Controls.Add(textBox12);
             Controls.Add(textBox11);
             Controls.Add(textBox10);
-            Controls.Add(Age);
             Controls.Add(textBox9);
             Controls.Add(BodyLength);
             Controls.Add(Add_animal);
@@ -464,7 +480,6 @@
         private Button Add_animal;
         private ComboBox BodyLength;
         private TextBox textBox9;
-        private ComboBox Age;
         private ContextMenuStrip contextMenuStrip1;
         private TextBox textBox10;
         private TextBox textBox11;
@@ -476,10 +491,13 @@
         private TextBox textBox17;
         private TextBox textBox18;
         private TextBox textBox19;
-        private ComboBox suborder;
         private ComboBox Humidity;
-        private TextBox textBox15;
-        private ComboBox Food_weight;
         private TextBox Weight;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox suborder;
+        private TextBox textBox3;
+        private TextBox MonthlyCost;
+        private ComboBox sex;
+        private TextBox textBox4;
     }
 }

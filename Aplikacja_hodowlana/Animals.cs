@@ -10,6 +10,7 @@ namespace Aplikacja_hodowlana
     public class Animals
     {
         // Animal-specific properties and methods used in all derived classes
+       
         public int Id { get; set; }
         public string Name { get; set; }
         public string Group { get; set; }
@@ -18,23 +19,35 @@ namespace Aplikacja_hodowlana
         public string Environment { get; set; }
         public string Climate { get; set; }
         public string ActivityTime { get; set; }
-        //public DateTime DateOfLastFeeding { get; set; }
-        //public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfLastFeeding { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public double MonthlyCost { get; set; }
+        public DateTime Added { get; set; }
+        public string Sex { get; set; }
+        
+        
+        public int Age
+        {
+            get
+            {
+                var today = DateTime.Today;
+                var age = today.Year - DateOfBirth.Year;
+                if (DateOfBirth.Date > today.AddYears(-age)) age--;
+                return age;
+            }
 
-        //public int Age
-        //{
-        //    get
-        //    {
-        //        var today = DateTime.Today;
-        //        var age = today.Year - DateOfBirth.Year;
-        //        if (DateOfBirth.Date > today.AddYears(-age)) age--;
-        //        return age;
-        //    }
-        //    set
-        //    {
+        }
+        public double TotalCost 
+        {
+             get
+            {
+                int monthElapsed = (DateTime.Now.Year - Added.Year) * 12 + DateTime.Now.Month - Added.Month;
+                return MonthlyCost * monthElapsed;
+            }
 
-        //    }
-        //}
+        }
+
+       
         public List<Group> Groups { get; set; }
         //public enum ClimateList
         //{
@@ -48,6 +61,7 @@ namespace Aplikacja_hodowlana
         //public enum AnimalsEnvironmentList
         //{
         //    // List of possible environments, add more when needed 
+
         //    Desert,
         //    Steppes,
         //    Forest,

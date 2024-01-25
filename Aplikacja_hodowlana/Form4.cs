@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,21 +10,33 @@ using System.Windows.Forms;
 
 namespace Aplikacja_hodowlana
 {
-    public partial class Form2 : Form
+    public partial class Form4 : Form
     {
-
-
-        public Form2()
+        private Reptiles _reptiles;
+        public Form4(Reptiles reptiles)
         {
-
             InitializeComponent();
-            suborder.Items.Clear();
+            _reptiles = reptiles;
+            Type.Text = _reptiles.Group;
+            textBox1.Text = _reptiles.Name;
+            textBox8.Text = _reptiles.Species;
+            Activity.Text = _reptiles.ActivityTime;
+            Enviroment_forms.Text = _reptiles.Environment;
+            Climate.Text = _reptiles.Climate;
+            Humidity.Text = _reptiles.Humidity;
+            textBox18.Text = _reptiles.Morph;
+            Length.Text = _reptiles.Lenght.ToString();
+            Weight.Text = _reptiles.Weight.ToString();
+            Suplements.Text = _reptiles.Suplements ? "Tak" : "Nie";
+            dateTimePicker1.Value = _reptiles.DateOfBirth;
+            MonthlyCost.Text = _reptiles.MonthlyCost.ToString();
+            sex.Text = _reptiles.Sex;
 
             Type.Items.Clear();
             Type.Items.AddRange(new string[] { "Gady", "Pajęczaki", "Płazy", "Owady", "Inne" });
-            
+
             sex.Items.Clear();
-            sex.Items.AddRange(new string[] {"Samiec", "Samica", "Brak"}); 
+            sex.Items.AddRange(new string[] { "Samiec", "Samica", "Brak" });
 
             Activity.Items.Clear();
             Activity.Items.AddRange(new string[] { "Dzień", "Noc" });
@@ -59,9 +69,68 @@ namespace Aplikacja_hodowlana
             this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
             Refresh();
         }
+        public void UpdateReptile(DataBase dataBase, Reptiles updatedReptile)
+        {
+            
+            var reptile = dataBase.Reptiles.FirstOrDefault(r => r.Id == updatedReptile.Id);
+            if (reptile != null)
+            {
+               
+                reptile.Name = updatedReptile.Name;
+                reptile.Species = updatedReptile.Species;
+                reptile.Environment = updatedReptile.Environment;
+                reptile.ActivityTime = updatedReptile.ActivityTime;
+                reptile.DateOfBirth = updatedReptile.DateOfBirth;
+                reptile.Morph = updatedReptile.Morph;
+                reptile.Lenght = updatedReptile.Lenght;
+                reptile.Weight = updatedReptile.Weight;
+                reptile.Suplements = updatedReptile.Suplements;
+                reptile.Humidity = updatedReptile.Humidity;
+                reptile.Climate = updatedReptile.Climate;
+                reptile.MonthlyCost = updatedReptile.MonthlyCost;
+                reptile.Sex = updatedReptile.Sex;
+                reptile.Group = updatedReptile.Group;
+
+                    
+
+
+               
+                
+            }
+        }
+        private void Add_animal_Click(object sender, EventArgs e)
+        {
+            
+
+                _reptiles.Group = Type.SelectedItem.ToString();
+                _reptiles.Name = textBox1.Text;
+                _reptiles.Species = textBox2.Text;
+                _reptiles.Environment = Enviroment_forms.SelectedItem.ToString();
+                _reptiles.ActivityTime = Activity.SelectedItem.ToString();
+                _reptiles.DateOfBirth = dateTimePicker1.Value;
+                _reptiles.Morph = textBox18.Text;
+                _reptiles.Lenght = Convert.ToDouble(Length.Text);
+                _reptiles.Weight = Convert.ToDouble(Weight.Text);
+                _reptiles.Suplements = Suplements.SelectedItem.ToString() == "Tak" ? true : false;
+                _reptiles.Humidity = Humidity.SelectedItem.ToString();
+                _reptiles.Climate = Climate.SelectedItem.ToString();
+                _reptiles.Added = DateTime.Now;
+                _reptiles.MonthlyCost = Convert.ToDouble(MonthlyCost.Text);
+                _reptiles.Sex = sex.SelectedItem.ToString();
+               
+
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string filePath = Path.Combine(desktopPath, "Reptiles.json");
+                DataBase dataBase = File.Exists(filePath) ? DataBase.LoadFromJsonFile(filePath) : new DataBase();
+
+                UpdateReptile(dataBase, _reptiles);
+                dataBase.SaveToJsonFile(filePath);
+                this.Close();
+            
+        }
+
         private void Type_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (Type.SelectedItem != null && Type.SelectedItem.ToString() == "Gady")
             {
                 suborder.Items.Clear();
@@ -117,84 +186,6 @@ namespace Aplikacja_hodowlana
                 Suplements.Enabled = false;
 
             }
-
-        }
-
-
-      
-
-        private void Add_animal_Click(object sender, EventArgs e)
-        {
-            if (Type.SelectedItem.ToString() == "Gady")
-            {
-                var reptile = new Reptiles()
-                {
-                    
-                    Group = Type.SelectedItem.ToString(),
-                    Name = textBox1.Text,
-                    Species = textBox2.Text,
-                    Environment = Enviroment_forms.SelectedItem.ToString(),
-                    ActivityTime = Activity.SelectedItem.ToString(),
-                    DateOfBirth = dateTimePicker1.Value,
-                    Morph = textBox18.Text,
-                    Lenght = Convert.ToDouble(Length.Text),
-                    Weight = Convert.ToDouble(Weight.Text),
-                    Suplements = Suplements.SelectedItem.ToString() == "Tak" ? true : false,
-                    Humidity = Humidity.SelectedItem.ToString(),
-                    Climate = Climate.SelectedItem.ToString(),
-                    Added = DateTime.Now,
-                    MonthlyCost = Convert.ToDouble(MonthlyCost.Text),
-                    Sex = sex.SelectedItem.ToString(),
-                };
-
-                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string filePath = Path.Combine(desktopPath, "Reptiles.json");
-                DataBase dataBase = File.Exists(filePath) ? DataBase.LoadFromJsonFile(filePath) : new DataBase();
-
-                dataBase.AddReptile(reptile);
-                dataBase.SaveToJsonFile(filePath);
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void ReturnToMenu(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            this.Hide();
-            menu.Show();
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
