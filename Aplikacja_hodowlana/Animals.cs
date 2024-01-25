@@ -10,6 +10,7 @@ namespace Aplikacja_hodowlana
     public class Animals
     {
         // Animal-specific properties and methods used in all derived classes
+       
         public int Id { get; set; }
         public string Name { get; set; }
         public string Group { get; set; }

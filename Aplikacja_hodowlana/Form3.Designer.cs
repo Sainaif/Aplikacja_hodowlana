@@ -29,51 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewButtonColumn();
             dataBaseBindingSource = new BindingSource(components);
             button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataBaseBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.BackgroundColor = Color.Chartreuse;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1 });
-            dataGridView1.GridColor = Color.ForestGreen;
-            dataGridView1.Location = new Point(-2, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(1280, 579);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Gold;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.NullValue = "-------";
-            Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            Column1.FlatStyle = FlatStyle.Popup;
-            Column1.HeaderText = "";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Text = "Edytuj";
-            Column1.UseColumnTextForButtonValue = true;
-            Column1.Width = 53;
             // 
             // dataBaseBindingSource
             // 
             dataBaseBindingSource.DataSource = typeof(DataBase);
-            
             // 
             // button1
             // 
@@ -87,6 +53,21 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.BackgroundColor = Color.Chartreuse;
+            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.ForestGreen;
+            dataGridView1.Location = new Point(-2, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(1280, 579);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -98,16 +79,15 @@
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataBaseBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private BindingSource dataBaseBindingSource;
         private Button button1;
-        private DataGridViewButtonColumn Column1;
+        private DataGridView dataGridView1;
+        private DataGridViewButtonColumn delete;
     }
 }
